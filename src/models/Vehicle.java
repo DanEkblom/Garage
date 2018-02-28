@@ -6,7 +6,7 @@ package models;
  * Class description: Super class for all vehicle classes.
  *
  */
-public abstract class Vehicle {
+public class Vehicle {
 	
 	private String registrationNumber;
 	private String color;
@@ -92,9 +92,5 @@ public abstract class Vehicle {
 	public void setNumberOfEngines(int numberOfEngines) {
 		this.numberOfEngines = numberOfEngines;
 	}
-	
-	
-	
-	
 	
 }

@@ -1,5 +1,7 @@
 package models;
 
+import java.util.ArrayList;
+
 /**
  * 
  * @author Dan and Anders
@@ -8,33 +10,28 @@ package models;
  */
 public class Garage {
 	
-	private Vehicle[] vehicleArray;
-	private int nextPosition;
+	private ArrayList<Vehicle> vehicleArray;
 	
 	public Garage() {
-		vehicleArray = new Vehicle[10];
-		nextPosition = 0;
+		vehicleArray = new ArrayList<Vehicle>(10);
 	}
 	
-	public Vehicle[] getVehicleArray() {
+	public ArrayList<Vehicle> getVehicleArray() {
 		return vehicleArray;
 	}
 	
 	public void parkVehicle(Vehicle vehicleToPark) {
-		vehicleArray[nextPosition] = vehicleToPark;
-		nextPosition++;
+		vehicleArray.add(vehicleToPark);
 	}
 	
-	public void unparkVehicle(Vehicle regNumber) // throw Exception
+	public void unparkVehicle(Vehicle vehicleToUnpark) // throws Exception
 	{
-		for (int i = 0; i < nextPosition; i++) {
-			if (vehicleArray[i].getRegistrationNumber().equals(regNumber)) {
-				//
-			}
-			else {
-				// throw new Exception
-			}
-			
+		if (vehicleArray.contains(vehicleToUnpark)) {
+			vehicleArray.remove(vehicleToUnpark);
 		}
+		else {
+			// Throws new Exception.
+		}
+		
 	}
 }
