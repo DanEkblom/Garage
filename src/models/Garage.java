@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 
+import exceptions.VehicleGarageFullException;
 import exceptions.VehicleNotFoundException;
 
 /**
@@ -30,7 +31,7 @@ public class Garage {
 	/**
 	 * @param Adds vehicle to garage and throws an Exception when trying to park in a full garage.
 	 */
-	public void parkVehicle(Vehicle vehicleToPark) throws VehicleNotFoundException {
+	public void parkVehicle(Vehicle vehicleToPark) throws VehicleGarageFullException {
 		if (vehicleArray.size() < maxGarageSize) { //getVehicleArray().size() < vehicleArray.size()
 			vehicleArray.add(vehicleToPark);
 		}
