@@ -1,5 +1,6 @@
 package models;
 
+import utils.Parking;
 import utils.VehicleParking;
 
 /**
@@ -12,8 +13,8 @@ public class Motorcycle extends Vehicle {
 
 	private int numberOfWheels;
 
-	public Motorcycle(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, int numberOfWheels) {
-		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking);
+	public Motorcycle(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, int numberOfWheels, Parking parked) {
+		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking, parked);
 		this.numberOfWheels = numberOfWheels;
 	}
 	
@@ -28,6 +29,6 @@ public class Motorcycle extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Motorcykle with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + ", [numberOfWheels=" + numberOfWheels + "]";
+		return "Motorcykle with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
 	}
 }

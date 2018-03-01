@@ -87,12 +87,25 @@ public class Main {
 		*/
 		
 		
-		
-		
 		GarageHandler gh = new GarageHandler();
-		 gh.listAllParkedVehicles();
 		
+		 //Create Vehicles
+		gh.createVehicle("car");
+		gh.createVehicle("motorcykle");
+		gh.createVehicle("boat");
 		
+		System.out.println("--------------------------");
+		
+		//List all parked Vehicles
+		
+		gh.listAllParkedVehicles();
+		
+		//Add Vehicles to garage
+		gh.createVehicle("car");
+		
+		gh.listAllParkedVehicles();
+		
+		//Remove vehicles from garage
 		
 		
 		

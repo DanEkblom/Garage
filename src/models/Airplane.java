@@ -1,5 +1,6 @@
 package models;
 
+import utils.Parking;
 import utils.VehicleParking;
 
 /**
@@ -13,8 +14,8 @@ public class Airplane extends Vehicle {
 	private int numberOfWheels;
 	private int numberOfDoors;
 	
-	public Airplane(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, int numberOfWheels, int numberOfDoors) {
-		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking);
+	public Airplane(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, int numberOfWheels, int numberOfDoors, Parking parked) {
+		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking, parked);
 		this.numberOfWheels = numberOfWheels;
 		this.numberOfDoors = numberOfDoors;
 	}
@@ -30,7 +31,6 @@ public class Airplane extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Airplane with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + ", [numberOfWheels=" + numberOfWheels + ", numberOfDoors="
-				+ numberOfDoors + "]";
+		return "Airplane with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
 	}
 }

@@ -1,5 +1,6 @@
 package models;
 
+import utils.Parking;
 import utils.VehicleParking;
 
 /**
@@ -16,14 +17,16 @@ public class Vehicle {
 	private String typeOfFuel;
 	private int numberOfEngines;
 	private VehicleParking vehicleParking;
+	private Parking parked;
 	
-	public Vehicle(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking) {
+	public Vehicle(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, Parking parked) {
 		super();
 		this.registrationNumber = registrationNumber;
 		this.color = color;
 		this.numberOfSeats = numberOfSeats;
 		this.typeOfFuel = typeOfFuel;
 		this.numberOfEngines = numberOfEngines;
+		this.parked = parked;
 	}
 
 	/**

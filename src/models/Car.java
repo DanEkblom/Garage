@@ -1,6 +1,7 @@
 package models;
 
 import models.Vehicle;
+import utils.Parking;
 import utils.VehicleParking;
 
 /**
@@ -15,11 +16,12 @@ public class Car extends Vehicle {
 	private boolean retractableRoof;
 	private int numberOfDoors;
 	
-	public Car(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, int numberOfWheels, boolean retractableRoof, int numberOfDoors) {
-		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking);
+	public Car(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, int numberOfWheels, boolean retractableRoof, int numberOfDoors, Parking parked) {
+		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking, parked);
 		this.numberOfWheels = numberOfWheels;
 		this.retractableRoof = retractableRoof;
 		this.numberOfDoors = numberOfDoors;
+		
 	}
 
 	/**
@@ -32,8 +34,7 @@ public class Car extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Car with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + ", [numberOfWheels=" + numberOfWheels + ", retractableRoof=" + retractableRoof + ", numberOfDoors="
-				+ numberOfDoors + "]";
+		return "Car with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
 	}
 	
 	

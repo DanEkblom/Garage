@@ -1,5 +1,6 @@
 package models;
 
+import utils.Parking;
 import utils.VehicleParking;
 
 /**
@@ -13,8 +14,8 @@ public class Boat extends Vehicle {
 	private boolean hasToilet;
 	private boolean hasSails;
 	
-	public Boat(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, boolean hasToilet, boolean hasSails) {
-		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking);
+	public Boat(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking, boolean hasToilet, boolean hasSails, Parking parked) {
+		super(registrationNumber, color, numberOfSeats, typeOfFuel, numberOfEngines, vehicleParking, parked);
 		this.hasToilet = hasToilet;
 		this.hasSails = hasSails;
 	}
