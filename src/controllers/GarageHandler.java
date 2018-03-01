@@ -20,65 +20,9 @@ import utils.VehicleParking;
  */
 public class GarageHandler {
 	
-//	Car car = new Car("BBB222", "white", 2, "diesel", 1, VehicleParking.GARAGE, 5, false, 4);
-//	Car car2 = new Car("AAA111", "black", 4, "gasoline", 1, VehicleParking.GARAGE, 4, false, 2);
-//	Boat boat = new Boat("B001", "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true);
-//	Motorcycle motorcykle = new Motorcycle("MCC001", "red", 2, "gasoline", 1, VehicleParking.GARAGE, 2);
-//	Airplane airplane = new Airplane("AIR001", "blue", 120, "jetfuel", 4, VehicleParking.HANGAR, 3, 2);
-	
-	
 	Garage garage = new Garage();
 	
 	public GarageHandler() {
-		
-		
-//		System.out.println(garage.getVehicleArray().size()); // 0
-//		
-//		
-//		try {
-//			garage.parkVehicle(car);
-//		}
-//		catch (VehicleGarageFullException e) {
-//		}
-//		
-//		try {
-//			garage.parkVehicle(car2);
-//		}
-//		catch (VehicleGarageFullException e) {	
-//		}
-//		
-//		try {
-//			garage.parkVehicle(boat);
-//		}
-//		catch (VehicleGarageFullException e) {	
-//		}
-//		
-//		try {
-//			garage.parkVehicle(motorcykle);
-//		}
-//		catch (VehicleGarageFullException e) {
-//		}
-//		
-//		try {
-//			garage.parkVehicle(airplane);
-//		}
-//		catch (VehicleGarageFullException e) {
-//		}
-//	
-//		
-//		System.out.println(garage.getVehicleArray().size()); // 5
-//		
-//		
-//		for (int i = 0; i < garage.getVehicleArray().size(); i++) {
-//			System.out.println(garage.getVehicleArray().get(i));
-//		}
-//		
-//		try {
-//			System.out.println(garage.findVehicle("B001"));
-//		}
-//		catch (VehicleNotFoundException e) {
-//			// TODO: handle exception
-//		}
 	}
 	
 	
@@ -113,18 +57,22 @@ public class GarageHandler {
 		break;
 	case "motorcykle": 
 		Motorcycle motorcykle = new Motorcycle(getRandom() + getRandom() + getRandom() + getRandom(), "red", 2, "gasoline", 1, VehicleParking.GARAGE, 2, Parking.PARKED);
+		parkAVehicle(motorcykle);
 		System.out.println(motorcykle);
 		break;
 	case "airplane": 
 		Airplane airplane = new Airplane(getRandom() + getRandom() + getRandom() + getRandom(), "blue", 120, "jetfuel", 4, VehicleParking.HANGAR, 3, 2, Parking.PARKED);
+		parkAVehicle(airplane);
 		System.out.println(airplane);
 		break;
 	case "boat": 
 		Boat boat = new Boat(getRandom() + getRandom() + getRandom() + getRandom(), "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true, Parking.PARKED);
+		parkAVehicle(boat);
 		System.out.println(boat);
 		break;
 	case "bus": 
 		Bus bus = new Bus(getRandom() + getRandom() + getRandom() + getRandom(), "Yellow", 22, "Diesel", 1, VehicleParking.GARAGE, 8, 3, 1,Parking.PARKED);
+		parkAVehicle(bus);
 		System.out.println(bus);
 		break;
 	default:
@@ -140,38 +88,5 @@ public class GarageHandler {
 			System.out.println("Parking Failed");
 		}
 	}
-	
-	
-	/*
-	public void parkVehicle(Vehicle typeOfVehicle) {
-		switch (typeOfVehicle) {
-		case car: 
-			try {
-			garage.parkVehicle(car);
-			}
-			catch(VehicleGarageFullException e) {
-			}
-			break;
-		case "motorcykle": 
-			
-			break;
-		case "airplane": 
-			
-			break;
-		case "boat": 
-			
-			break;
-		case "bus": 
-			
-			break;
-		default:
-			break;
-		}
-		
-	}
-	*/
-	
-	
-	
 
 }
