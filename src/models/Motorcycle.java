@@ -25,4 +25,9 @@ public class Motorcycle extends Vehicle {
 		return VehicleParking.GARAGE;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "Motorcykle with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + ", [numberOfWheels=" + numberOfWheels + "]";
+	}
 }

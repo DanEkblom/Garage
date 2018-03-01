@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.VehicleGarageFullException;
 import exceptions.VehicleNotFoundException;
 import models.Airplane;
 
@@ -44,31 +45,31 @@ public class Main {
 		try {
 			garage.parkVehicle(car);
 		}
-		catch (VehicleNotFoundException e) {
+		catch (VehicleGarageFullException e) {
 		}
 		
 		try {
 			garage.parkVehicle(car2);
 		}
-		catch (VehicleNotFoundException e) {	
+		catch (VehicleGarageFullException e) {	
 		}
 		
 		try {
 			garage.parkVehicle(boat);
 		}
-		catch (VehicleNotFoundException e) {	
+		catch (VehicleGarageFullException e) {	
 		}
 		
 		try {
 			garage.parkVehicle(mc);
 		}
-		catch (VehicleNotFoundException e) {
+		catch (VehicleGarageFullException e) {
 		}
 		
 		try {
 			garage.parkVehicle(airplane);
 		}
-		catch (VehicleNotFoundException e) {
+		catch (VehicleGarageFullException e) {
 		}
 	
 		
@@ -81,6 +82,14 @@ public class Main {
 		for (int i = 0; i < garage.getVehicleArray().size(); i++) {
 			System.out.println(garage.getVehicleArray().get(i));
 		}
+		
+		try {
+			System.out.println(garage.findVehicle("B001"));
+		}
+		catch (VehicleNotFoundException e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 }

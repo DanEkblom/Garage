@@ -29,5 +29,9 @@ public class Bus extends Vehicle {
 		return VehicleParking.GARAGE;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Bus with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + ", [numberOfWheels=" + numberOfWheels +  ", numberOfDoors="
+				+ numberOfDoors + "]";
+	}
 }

@@ -28,4 +28,9 @@ public class Airplane extends Vehicle {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "Airplane with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + ", [numberOfWheels=" + numberOfWheels + ", numberOfDoors="
+				+ numberOfDoors + "]";
+	}
 }

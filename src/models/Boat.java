@@ -28,5 +28,8 @@ public class Boat extends Vehicle {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Boat with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
+	}
 }

@@ -28,6 +28,46 @@ public class Garage {
 		return vehicleArray;
 	}
 	
+	public Vehicle findVehicle(String vehicleNrToFindVehicle) throws VehicleNotFoundException 
+	{
+
+		Vehicle v = null;
+		
+		for (int i = 0; i < getVehicleArray().size(); i++)  
+		{
+			
+			if(getVehicleArray().get(i).getRegistrationNumber().equals(vehicleNrToFindVehicle)){
+				v = getVehicleArray().get(i);
+			}
+			else {
+				
+			}
+			
+			/*	
+			if(getVehicleArray().get(i).getRegistrationNumber().equals(vehicleNrToFindVehicle)) 
+			{
+				v = getVehicleArray().get(i);
+				System.out.println("yes");
+			}
+			else 
+			{
+				System.out.println("Vehicle can't be found in the garage");
+				throw new VehicleNotFoundException();
+			}
+			*/		
+		}	
+		return v;
+		
+	}
+		
+		
+		
+		
+		
+		
+	
+
+	
 	/**
 	 * @param Adds vehicle to garage and throws an Exception when trying to park in a full garage.
 	 */
