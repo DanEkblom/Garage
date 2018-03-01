@@ -1,5 +1,7 @@
 package models;
 
+import utils.VehicleParking;
+
 /**
  * 
  * @author Dan and Anders
@@ -13,8 +15,9 @@ public class Vehicle {
 	private int numberOfSeats;
 	private String typeOfFuel;
 	private int numberOfEngines;
+	private VehicleParking vehicleParking;
 	
-	public Vehicle(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines) {
+	public Vehicle(String registrationNumber, String color, int numberOfSeats, String typeOfFuel, int numberOfEngines, VehicleParking vehicleParking) {
 		super();
 		this.registrationNumber = registrationNumber;
 		this.color = color;
@@ -92,5 +95,19 @@ public class Vehicle {
 	public void setNumberOfEngines(int numberOfEngines) {
 		this.numberOfEngines = numberOfEngines;
 	}
+	
+	/**
+	 * @return the vehicleParking
+	 */
+	public VehicleParking getVehicleParking() {
+		return vehicleParking;
+	}
+	
+	@Override
+	public String toString() {
+		return "Vehicle with registrationNumber " + registrationNumber + " is " + color + ", seats "
+				+ numberOfSeats + ", runs on " + typeOfFuel + " and has " + numberOfEngines + " engines.";
+	}
+	
 	
 }

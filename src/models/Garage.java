@@ -2,6 +2,8 @@ package models;
 
 import java.util.ArrayList;
 
+import exceptions.VehicleNotFoundException;
+
 /**
  * 
  * @author Dan and Anders
@@ -12,6 +14,9 @@ public class Garage {
 	
 	private ArrayList<Vehicle> vehicleArray;
 	
+	/**
+	 * @param Sets array size to 10
+	 */
 	public Garage() {
 		vehicleArray = new ArrayList<Vehicle>(10);
 	}
@@ -20,18 +25,25 @@ public class Garage {
 		return vehicleArray;
 	}
 	
+	/**
+	 * @param Adds vehicle to garage
+	 */
 	public void parkVehicle(Vehicle vehicleToPark) {
 		vehicleArray.add(vehicleToPark);
 	}
 	
-	public void unparkVehicle(Vehicle vehicleToUnpark) // throws Exception
+	/**
+	 * @param Removes vehicle from garage
+	 */
+	public void unparkVehicle(Vehicle vehicleToUnpark) throws VehicleNotFoundException // throws Exception
 	{
 		if (vehicleArray.contains(vehicleToUnpark)) {
 			vehicleArray.remove(vehicleToUnpark);
 		}
 		else {
-			// Throws new Exception.
+			throw new VehicleNotFoundException();
 		}
 		
-	}
+	};
+	
 }
