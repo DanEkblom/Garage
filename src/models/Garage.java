@@ -28,8 +28,13 @@ public class Garage {
 	/**
 	 * @param Adds vehicle to garage
 	 */
-	public void parkVehicle(Vehicle vehicleToPark) {
-		vehicleArray.add(vehicleToPark);
+	public void parkVehicle(Vehicle vehicleToPark) throws VehicleNotFoundException {
+		if (getVehicleArray().size() < vehicleArray.size()) {
+			vehicleArray.add(vehicleToPark);
+		}
+		else {
+			System.out.println("Sorry. The garage is full. Vehicle can't be parked.");
+		}
 	}
 	
 	/**
