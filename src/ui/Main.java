@@ -1,5 +1,6 @@
 package ui;
 
+import controllers.GarageHandler;
 import exceptions.VehicleGarageFullException;
 import exceptions.VehicleNotFoundException;
 import models.Airplane;
@@ -22,6 +23,8 @@ import utils.VehicleParking;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		/*
 		Car car = new Car("BBB222", "white", 2, "diesel", 1, VehicleParking.GARAGE, 5, false, 4);
 		Car car2 = new Car("AAA111", "black", 4, "gasoline", 1, VehicleParking.GARAGE, 4, false, 2);
 		Boat boat = new Boat("B001", "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true);
@@ -33,13 +36,6 @@ public class Main {
 		
 		System.out.println(garage.getVehicleArray().size()); // 0
 		
-		/*
-		garage.parkVehicle(car);
-		garage.parkVehicle(car2);
-		garage.parkVehicle(boat);
-		garage.parkVehicle(mc);
-		garage.parkVehicle(airplane);
-		*/
 		
 		
 		try {
@@ -75,9 +71,6 @@ public class Main {
 		
 		System.out.println(garage.getVehicleArray().size()); // 5
 		
-		//System.out.println(garage.getVehicleArray().get(0).toString());
-		//System.out.println(garage.getVehicleArray().get(1).toString());
-		//System.out.println(garage.getVehicleArray().toString());
 		
 		for (int i = 0; i < garage.getVehicleArray().size(); i++) {
 			System.out.println(garage.getVehicleArray().get(i));
@@ -89,6 +82,33 @@ public class Main {
 		catch (VehicleNotFoundException e) {
 			// TODO: handle exception
 		}
+		
+		
+		*/
+		
+		
+		
+		
+		GarageHandler gh = new GarageHandler();
+		 gh.listAllParkedVehicles();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 

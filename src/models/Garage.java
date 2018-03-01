@@ -43,18 +43,6 @@ public class Garage {
 				
 			}
 			
-			/*	
-			if(getVehicleArray().get(i).getRegistrationNumber().equals(vehicleNrToFindVehicle)) 
-			{
-				v = getVehicleArray().get(i);
-				System.out.println("yes");
-			}
-			else 
-			{
-				System.out.println("Vehicle can't be found in the garage");
-				throw new VehicleNotFoundException();
-			}
-			*/		
 		}	
 		return v;
 		
