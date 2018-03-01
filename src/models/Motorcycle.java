@@ -22,7 +22,6 @@ public class Motorcycle extends Vehicle {
 	 */
 	@Override
 	public VehicleParking getVehicleParking() {
-		getVehicleParking();
 		return VehicleParking.GARAGE;
 	}
 	

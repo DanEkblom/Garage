@@ -1,5 +1,6 @@
 package ui;
 
+import exceptions.VehicleNotFoundException;
 import models.Airplane;
 
 //import java.util.Iterator;
@@ -28,11 +29,50 @@ public class Main {
 		
 		
 		Garage garage = new Garage();
+		
+		System.out.println(garage.getVehicleArray().size()); // 0
+		
+		/*
 		garage.parkVehicle(car);
 		garage.parkVehicle(car2);
 		garage.parkVehicle(boat);
 		garage.parkVehicle(mc);
 		garage.parkVehicle(airplane);
+		*/
+		
+		
+		try {
+			garage.parkVehicle(car);
+		}
+		catch (VehicleNotFoundException e) {
+		}
+		
+		try {
+			garage.parkVehicle(car2);
+		}
+		catch (VehicleNotFoundException e) {	
+		}
+		
+		try {
+			garage.parkVehicle(boat);
+		}
+		catch (VehicleNotFoundException e) {	
+		}
+		
+		try {
+			garage.parkVehicle(mc);
+		}
+		catch (VehicleNotFoundException e) {
+		}
+		
+		try {
+			garage.parkVehicle(airplane);
+		}
+		catch (VehicleNotFoundException e) {
+		}
+	
+		
+		System.out.println(garage.getVehicleArray().size()); // 5
 		
 		//System.out.println(garage.getVehicleArray().get(0).toString());
 		//System.out.println(garage.getVehicleArray().get(1).toString());

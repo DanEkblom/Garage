@@ -27,7 +27,6 @@ public class Car extends Vehicle {
 	 */
 	@Override
 	public VehicleParking getVehicleParking() {
-		getVehicleParking();
 		return VehicleParking.GARAGE;
 	}
 	

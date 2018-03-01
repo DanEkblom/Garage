@@ -24,7 +24,6 @@ public class Airplane extends Vehicle {
 	 */
 	@Override
 	public VehicleParking getVehicleParking() {
-		getVehicleParking();
 		return VehicleParking.HANGAR;
 	}
 	

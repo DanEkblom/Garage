@@ -24,7 +24,6 @@ public class Boat extends Vehicle {
 	 */
 	@Override
 	public VehicleParking getVehicleParking() {
-		getVehicleParking();
 		return VehicleParking.HARBOR;
 	}
 	

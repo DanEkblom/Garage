@@ -13,12 +13,14 @@ import exceptions.VehicleNotFoundException;
 public class Garage {
 	
 	private ArrayList<Vehicle> vehicleArray;
+	private int maxGarageSize;
 	
 	/**
 	 * @param Sets array size to 10
 	 */
 	public Garage() {
-		vehicleArray = new ArrayList<Vehicle>(10);
+		maxGarageSize = 10;
+		vehicleArray = new ArrayList<Vehicle>(maxGarageSize);
 	}
 	
 	public ArrayList<Vehicle> getVehicleArray() {
@@ -26,10 +28,10 @@ public class Garage {
 	}
 	
 	/**
-	 * @param Adds vehicle to garage
+	 * @param Adds vehicle to garage and throws an Exception when trying to park in a full garage.
 	 */
 	public void parkVehicle(Vehicle vehicleToPark) throws VehicleNotFoundException {
-		if (getVehicleArray().size() < vehicleArray.size()) {
+		if (vehicleArray.size() < maxGarageSize) { //getVehicleArray().size() < vehicleArray.size()
 			vehicleArray.add(vehicleToPark);
 		}
 		else {
@@ -38,14 +40,15 @@ public class Garage {
 	}
 	
 	/**
-	 * @param Removes vehicle from garage
+	 * @param Removes vehicle from garage, and if vehicle can't be found an Exception will be thrown.
 	 */
-	public void unparkVehicle(Vehicle vehicleToUnpark) throws VehicleNotFoundException // throws Exception
+	public void unparkVehicle(Vehicle vehicleToUnpark) throws VehicleNotFoundException
 	{
 		if (vehicleArray.contains(vehicleToUnpark)) {
 			vehicleArray.remove(vehicleToUnpark);
 		}
 		else {
+			System.out.println("Sorry. Vehicle can't be found in the garage.\nAre you sure you've parked it?");
 			throw new VehicleNotFoundException();
 		}
 		
