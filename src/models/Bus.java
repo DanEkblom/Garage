@@ -32,6 +32,6 @@ public class Bus extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Bus with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
+		return "Bus with regnumber " + getRegistrationNumber() + " is parked in the " + getVehicleParking().toString().toLowerCase() + ".";
 	}
 }

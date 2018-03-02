@@ -31,6 +31,6 @@ public class Airplane extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Airplane with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
+		return "Airplane with regnumber " + getRegistrationNumber() + " is parked in the " + getVehicleParking().toString().toLowerCase() + ".";
 	}
 }

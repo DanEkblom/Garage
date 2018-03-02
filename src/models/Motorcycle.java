@@ -29,6 +29,6 @@ public class Motorcycle extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Motorcykle with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
+		return "Motorcycle with regnumber " + getRegistrationNumber() + " is parked in the " + getVehicleParking().toString().toLowerCase() + ".";
 	}
 }

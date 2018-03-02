@@ -34,7 +34,7 @@ public class Car extends Vehicle {
 	
 	@Override
 	public String toString() {
-		return "Car with regnumber " + getRegistrationNumber() + " is parking in the " + getVehicleParking() + "]";
+		return "Car with regnumber " + getRegistrationNumber() + " is parked in the " + getVehicleParking().toString().toLowerCase() + ".";
 	}
 	
 	

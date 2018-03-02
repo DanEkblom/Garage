@@ -21,6 +21,7 @@ import utils.VehicleParking;
 public class GarageHandler {
 	
 	Garage garage = new Garage();
+	static String parkedVehicleSuccessful = "Vehicle has been checked in by customer.";
 	
 	public GarageHandler() {
 	}
@@ -29,11 +30,9 @@ public class GarageHandler {
 	
 	public Vehicle listAllParkedVehicles()
 	{
-		//Garage garage2 = new Garage();
 		for (int i = 0; i < garage.getVehicleArray().size(); i++) {
 			System.out.println(garage.getVehicleArray().get(i));
 		}
-		System.out.println("----------------");
 		return null;
 	}
 	
@@ -56,29 +55,35 @@ public class GarageHandler {
 	case "car": 
 		Car car = new Car(getRandom(), "Black", 5, "Gasolin", 1, VehicleParking.GARAGE, 4, true, 4, Parking.PARKED);
 		parkAVehicle(car);
-		System.out.println(car);
+		System.out.println(parkedVehicleSuccessful);
+		//System.out.println(car);
 		break;
-	case "motorcykle": 
-		Motorcycle motorcykle = new Motorcycle(getRandom(), "red", 2, "gasoline", 1, VehicleParking.GARAGE, 2, Parking.PARKED);
-		parkAVehicle(motorcykle);
-		System.out.println(motorcykle);
+	case "motorcycle": 
+		Motorcycle motorcycle = new Motorcycle(getRandom(), "red", 2, "gasoline", 1, VehicleParking.GARAGE, 2, Parking.PARKED);
+		parkAVehicle(motorcycle);
+		System.out.println(parkedVehicleSuccessful);
+		//System.out.println(motorcykle);
 		break;
 	case "airplane": 
 		Airplane airplane = new Airplane(getRandom(), "blue", 120, "jetfuel", 4, VehicleParking.HANGAR, 3, 2, Parking.PARKED);
 		parkAVehicle(airplane);
-		System.out.println(airplane);
+		System.out.println(parkedVehicleSuccessful);
+		//System.out.println(airplane);
 		break;
 	case "boat": 
 		Boat boat = new Boat(getRandom(), "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true, Parking.PARKED);
 		parkAVehicle(boat);
-		System.out.println(boat);
+		System.out.println(parkedVehicleSuccessful);
+		//System.out.println(boat);
 		break;
 	case "bus": 
 		Bus bus = new Bus(getRandom(), "Yellow", 22, "Diesel", 1, VehicleParking.GARAGE, 8, 3, 1,Parking.PARKED);
 		parkAVehicle(bus);
-		System.out.println(bus);
+		System.out.println(parkedVehicleSuccessful);
+		//System.out.println(bus);
 		break;
 	default:
+		System.out.println("This type of vehicle is not allowed to be parked.");
 		break;
 		}	
 	}
@@ -110,33 +115,10 @@ public class GarageHandler {
 		
 	}
 	
-	/*
-	public void removeParkedVehicle(Vehicle vehicle) {
-		try {
-			garage.unparkVehicle(vehicle);
-		}
-		catch(VehicleNotFoundException e) {
-			System.out.println("Vehicle not found");
-		}
+	public Vehicle findAVehicle(String vehicleRegNumber) throws VehicleNotFoundException {
+		Vehicle findCar = garage.findVehicle(vehicleRegNumber);
 		
+		return findCar;
 	}
-	*/
-	
-	
-	/*
-	public void unparkVehicle(Vehicle vehicleToUnpark) throws VehicleNotFoundException
-	{
-		if (vehicleArray.contains(vehicleToUnpark)) {
-			vehicleArray.remove(vehicleToUnpark);
-		}
-		else {
-			System.out.println("Sorry. Vehicle can't be found in the garage.\nAre you sure you've parked it?");
-			throw new VehicleNotFoundException();
-		}
-		
-	}
-	*/
-	
-	
 
 }
