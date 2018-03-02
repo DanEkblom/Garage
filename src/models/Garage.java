@@ -36,31 +36,22 @@ public class Garage {
 		for (int i = 0; i < getVehicleArray().size(); i++)  
 		{
 			
-			if(getVehicleArray().get(i).getRegistrationNumber().equals(vehicleNrToFindVehicle)){
+			if(getVehicleArray().get(i).getRegistrationNumber().equals(vehicleNrToFindVehicle))
+			{
 				v = getVehicleArray().get(i);
+				System.out.println("Vehicle was found");
 			}
-			else {
-				
-			}
-			
 		}	
 		return v;
 		
 	}
-		
-		
-		
-		
-		
-		
-	
 
 	
 	/**
 	 * @param Adds vehicle to garage and throws an Exception when trying to park in a full garage.
 	 */
 	public void parkVehicle(Vehicle vehicleToPark) throws VehicleGarageFullException {
-		if (vehicleArray.size() < maxGarageSize) { //getVehicleArray().size() < vehicleArray.size()
+		if (vehicleArray.size() < maxGarageSize) { 
 			vehicleArray.add(vehicleToPark);
 		}
 		else {

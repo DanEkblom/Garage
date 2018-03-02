@@ -11,6 +11,8 @@ import models.Boat;
 import models.Car;
 import models.Garage;
 import models.Motorcycle;
+import models.Vehicle;
+import utils.Parking;
 //import models.Vehicle;
 import utils.VehicleParking;
 
@@ -86,7 +88,40 @@ public class Main {
 		
 		*/
 		
+		/*
+		Garage garage = new Garage();
+		Car car = new Car("BBB222", "white", 2, "diesel", 1, VehicleParking.GARAGE, 5, false, 4,Parking.PARKED);
+		Boat boat = new Boat("B001", "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true, Parking.PARKED);
 		
+		try 
+		{
+			garage.parkVehicle(car);
+		}
+		catch (VehicleGarageFullException e) 
+		{
+		}
+		
+		try 
+		{
+			garage.parkVehicle(boat);
+		}
+		catch (VehicleGarageFullException e) 
+		{	
+		}
+
+		try 
+		{
+			 Vehicle findCar = garage.findVehicle("BBB222");
+			
+			
+		}
+		catch(VehicleNotFoundException e) 
+		{
+			
+		}
+*/
+		
+		//Create Ggarage
 		GarageHandler gh = new GarageHandler();
 		
 		 //Create Vehicles
@@ -97,29 +132,16 @@ public class Main {
 		System.out.println("--------------------------");
 		
 		//List all parked Vehicles
-		
 		gh.listAllParkedVehicles();
 		
-		//Add Vehicles to garage
+		//Add a Vehicle and place it into garage
 		gh.createVehicle("car");
 		
+		//List all parked Vehicles
 		gh.listAllParkedVehicles();
+	
 		
-		//Remove vehicles from garage
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//Find and then Remove vehicles from garage
 		
 		
 		

@@ -25,8 +25,7 @@ public class GarageHandler {
 	public GarageHandler() {
 	}
 	
-	
-	
+		
 	
 	public Vehicle listAllParkedVehicles()
 	{
@@ -38,40 +37,44 @@ public class GarageHandler {
 		return null;
 	}
 	
+	
 	public String getRandom() {
-		
 		int minimum = 0;
 		int maximum = 10;
 		int randomNum = minimum + (int)(Math.random() * maximum); 
-		String num = String.valueOf(randomNum);
-		return num;
+		int randomNum1 = minimum + (int)(Math.random() * maximum); 
+		int randomNum2 = minimum + (int)(Math.random() * maximum); 
+		int randomNum3 = minimum + (int)(Math.random() * maximum); 
+		String num = String.valueOf(randomNum) + String.valueOf(randomNum1) + String.valueOf(randomNum2) + String.valueOf(randomNum3);
 		
+		return num;
 	}
+	
 	
 	public void createVehicle(String createVehicle) {
 		switch(createVehicle){
 	case "car": 
-		Car car = new Car(getRandom() + getRandom() + getRandom() + getRandom(), "Black", 5, "Gasolin", 1, VehicleParking.GARAGE, 4, true, 4, Parking.PARKED);
+		Car car = new Car(getRandom(), "Black", 5, "Gasolin", 1, VehicleParking.GARAGE, 4, true, 4, Parking.PARKED);
 		parkAVehicle(car);
 		System.out.println(car);
 		break;
 	case "motorcykle": 
-		Motorcycle motorcykle = new Motorcycle(getRandom() + getRandom() + getRandom() + getRandom(), "red", 2, "gasoline", 1, VehicleParking.GARAGE, 2, Parking.PARKED);
+		Motorcycle motorcykle = new Motorcycle(getRandom(), "red", 2, "gasoline", 1, VehicleParking.GARAGE, 2, Parking.PARKED);
 		parkAVehicle(motorcykle);
 		System.out.println(motorcykle);
 		break;
 	case "airplane": 
-		Airplane airplane = new Airplane(getRandom() + getRandom() + getRandom() + getRandom(), "blue", 120, "jetfuel", 4, VehicleParking.HANGAR, 3, 2, Parking.PARKED);
+		Airplane airplane = new Airplane(getRandom(), "blue", 120, "jetfuel", 4, VehicleParking.HANGAR, 3, 2, Parking.PARKED);
 		parkAVehicle(airplane);
 		System.out.println(airplane);
 		break;
 	case "boat": 
-		Boat boat = new Boat(getRandom() + getRandom() + getRandom() + getRandom(), "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true, Parking.PARKED);
+		Boat boat = new Boat(getRandom(), "silver", 6, "diesel", 2, VehicleParking.HARBOR, true, true, Parking.PARKED);
 		parkAVehicle(boat);
 		System.out.println(boat);
 		break;
 	case "bus": 
-		Bus bus = new Bus(getRandom() + getRandom() + getRandom() + getRandom(), "Yellow", 22, "Diesel", 1, VehicleParking.GARAGE, 8, 3, 1,Parking.PARKED);
+		Bus bus = new Bus(getRandom(), "Yellow", 22, "Diesel", 1, VehicleParking.GARAGE, 8, 3, 1,Parking.PARKED);
 		parkAVehicle(bus);
 		System.out.println(bus);
 		break;
@@ -79,6 +82,7 @@ public class GarageHandler {
 		break;
 		}	
 	}
+	
 	
 	public void parkAVehicle(Vehicle vehicle){
 		try {
@@ -88,5 +92,51 @@ public class GarageHandler {
 			System.out.println("Parking Failed");
 		}
 	}
+	
+	
+	public void removeParkedVehicle(String vehicleRegNumber) {
+		try {
+			Vehicle findCar = garage.findVehicle(vehicleRegNumber);
+			try {
+				garage.unparkVehicle(findCar);
+			}
+			catch (VehicleNotFoundException e) {
+				// TODO: handle exception
+			}
+		}
+		 catch (VehicleNotFoundException e) {
+			// TODO: handle exception
+		}
+		
+	}
+	
+	/*
+	public void removeParkedVehicle(Vehicle vehicle) {
+		try {
+			garage.unparkVehicle(vehicle);
+		}
+		catch(VehicleNotFoundException e) {
+			System.out.println("Vehicle not found");
+		}
+		
+	}
+	*/
+	
+	
+	/*
+	public void unparkVehicle(Vehicle vehicleToUnpark) throws VehicleNotFoundException
+	{
+		if (vehicleArray.contains(vehicleToUnpark)) {
+			vehicleArray.remove(vehicleToUnpark);
+		}
+		else {
+			System.out.println("Sorry. Vehicle can't be found in the garage.\nAre you sure you've parked it?");
+			throw new VehicleNotFoundException();
+		}
+		
+	}
+	*/
+	
+	
 
 }
