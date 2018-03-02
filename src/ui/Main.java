@@ -42,19 +42,18 @@ public class Main {
 		System.out.println("----------------------------");
 		System.out.println("Enter number: ");
 		
-		int menuChoice = scanner.nextInt();
+		String menuChoice = scanner.next();
 		
 		switch (menuChoice) {
-		case 1:
+		case "1":
 			// List all parked vehicles
 			gh.listAllParkedVehicles();
 			
 			System.out.println("\n");
 			callMenu();
-			menuChoice = scanner.nextInt();
-			
+			menuChoice = scanner.next();
 			break;
-		case 2:
+		case "2":
 			// Park a vehicle
 			System.out.println("Which type of vehicle? Airplane, Boat, Bus, Car or Motorcycle?");
 			String vehicleToPark = scanner.next();
@@ -62,18 +61,18 @@ public class Main {
 			
 			System.out.println("\n");
 			callMenu();
-			menuChoice = scanner.nextInt();
+			menuChoice = scanner.next();
 			break;
-		case 3:
+		case "3":
 			// Removes a parked vehicle
 			System.out.println("Enter vehicle registration number: ");
 			String vehicleRegNumber = scanner.next();
 			gh.removeParkedVehicle(vehicleRegNumber);
 			//System.out.println("Vehicle has been checked out by customer.\n");
 			callMenu();
-			menuChoice = scanner.nextInt();
+			menuChoice = scanner.next();
 			break;
-		case 4:
+		case "4":
 			// Find a parked vehicle
 			System.out.println("Enter vehicle registration number: ");
 			String vehicleParkedRegNumber = scanner.next();
@@ -86,9 +85,9 @@ public class Main {
 			
 			System.out.println("\n");
 			callMenu();
-			menuChoice = scanner.nextInt();
+			menuChoice = scanner.next();
 			break;
-		case 5:
+		case "5":
 			// Exit application
 			System.out.println("Application closed.");
 			System.exit(0);
@@ -100,9 +99,9 @@ public class Main {
 			// Not a valid menu choice.
 			System.out.println("Menu choice not found. Try another.\n");
 			callMenu();
-			menuChoice = scanner.nextInt();
+			menuChoice = scanner.next();
 			break;
-	}
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -206,20 +205,20 @@ public class Main {
 //		GarageHandler gh = new GarageHandler();
 		
 		//Create Vehicles
-		gh.createVehicle("car");
-		gh.createVehicle("motorcykle");
-		gh.createVehicle("boat");
+		//- gh.createVehicle("car");
+		//- gh.createVehicle("motorcykle");
+		//- gh.createVehicle("boat");
 		
-		System.out.println("--------------------------");
+		//- System.out.println("--------------------------");
 		
 		//List all parked Vehicles
-		gh.listAllParkedVehicles();
+		//- gh.listAllParkedVehicles();
 		
 		//Add a Vehicle and place it into garage
-		gh.createVehicle("car");
+		//- gh.createVehicle("car");
 		
 		//List all parked Vehicles
-		gh.listAllParkedVehicles();
+		//- gh.listAllParkedVehicles();
 	
 		//Find and then Remove vehicles from garage
 		//gh.removeParkedVehicle(vehicleRegNumber);
@@ -237,7 +236,7 @@ public class Main {
 //		System.out.println("Press 5 to find a parked vehicle");
 //		System.out.println("---------------------");
 		
-		System.out.println("\n\n");
+		//-System.out.println("\n\n");
 		System.out.println("----------------------------");
 		System.out.println("Welcome to OurGarage!");
 		System.out.println("----------------------------");
