@@ -33,13 +33,13 @@ public class Main {
 	
 
 	public static void callMenu() {
-		System.out.println("Choose action below: ");
+		System.out.println("CHOOSE ACTION BELOW: ");
 		System.out.println("1: List all parked vehicles");
 		System.out.println("2: Park a vehicle");
 		System.out.println("3: Checkout a parked vehicle");
 		System.out.println("4: Find a parked vehicle");
 		System.out.println("5: Exit application");
-		System.out.println("---------------------");
+		System.out.println("----------------------------");
 		System.out.println("Enter number: ");
 		
 		int menuChoice = scanner.nextInt();
@@ -69,7 +69,7 @@ public class Main {
 			System.out.println("Enter vehicle registration number: ");
 			String vehicleRegNumber = scanner.next();
 			gh.removeParkedVehicle(vehicleRegNumber);
-			System.out.println("Vehicle has been checked out by customer.\n");
+			//System.out.println("Vehicle has been checked out by customer.\n");
 			callMenu();
 			menuChoice = scanner.nextInt();
 			break;
@@ -78,7 +78,7 @@ public class Main {
 			System.out.println("Enter vehicle registration number: ");
 			String vehicleParkedRegNumber = scanner.next();
 			try {
-				gh.findAVehicle(vehicleParkedRegNumber);
+				System.out.println(gh.findAVehicle(vehicleParkedRegNumber));
 			}
 			catch (VehicleNotFoundException e) {
 				System.out.println("No vehicle with that registration number was found.");
@@ -238,9 +238,9 @@ public class Main {
 //		System.out.println("---------------------");
 		
 		System.out.println("\n\n");
-		System.out.println("---------------------");
+		System.out.println("----------------------------");
 		System.out.println("Welcome to OurGarage!");
-		System.out.println("---------------------");
+		System.out.println("----------------------------");
 		
 		callMenu();
 		

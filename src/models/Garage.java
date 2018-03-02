@@ -68,7 +68,7 @@ public class Garage {
 			vehicleArray.remove(vehicleToUnpark);
 		}
 		else {
-			System.out.println("Sorry. Vehicle can't be found in the garage.\nAre you sure you've parked it?");
+			System.out.println("Sorry. Vehicle can't be found in the garage.\nAre you sure you've parked it?\n");
 			throw new VehicleNotFoundException();
 		}
 		

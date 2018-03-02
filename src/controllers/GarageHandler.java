@@ -1,5 +1,8 @@
 package controllers;
 import java.util.Random;
+
+import javax.swing.plaf.synth.SynthScrollBarUI;
+
 import exceptions.VehicleGarageFullException;
 import exceptions.VehicleNotFoundException;
 import models.Airplane;
@@ -30,9 +33,16 @@ public class GarageHandler {
 	
 	public Vehicle listAllParkedVehicles()
 	{
-		for (int i = 0; i < garage.getVehicleArray().size(); i++) {
-			System.out.println(garage.getVehicleArray().get(i));
+		if(garage.getVehicleArray().size() == 0){
+			System.out.println("Garage is empty");
 		}
+		else {
+			for (int i = 0; i < garage.getVehicleArray().size(); i++) {
+				System.out.println(garage.getVehicleArray().get(i));
+			}
+		}
+		
+		
 		return null;
 	}
 	
@@ -104,9 +114,10 @@ public class GarageHandler {
 			Vehicle findCar = garage.findVehicle(vehicleRegNumber);
 			try {
 				garage.unparkVehicle(findCar);
+				System.out.println("Vehicle has been checked out by customer.\n");
 			}
 			catch (VehicleNotFoundException e) {
-				// TODO: handle exception
+				//
 			}
 		}
 		 catch (VehicleNotFoundException e) {
