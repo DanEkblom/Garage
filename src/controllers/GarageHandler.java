@@ -60,6 +60,10 @@ public class GarageHandler {
 	}
 	
 	
+	public void createCar(Car car) { 
+		parkAVehicle(car);
+	}
+	
 	public void createVehicle(String createVehicle) {
 		switch(createVehicle){
 	case "car": 

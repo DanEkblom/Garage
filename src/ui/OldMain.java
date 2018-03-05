@@ -1,7 +1,5 @@
 package ui;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 import controllers.GarageHandler;
@@ -27,22 +25,12 @@ import utils.VehicleParking;
  * Class description: Main class for executing the Garage application.
  *
  */
-public class Main {
+public class OldMain {
 	
 	//Create Garage
 	private static GarageHandler gh = new GarageHandler();
 	private static Scanner scanner = new Scanner(System.in);
-	static VehicleParking parked = VehicleParking.GARAGE;
 	
-	
-	static String vehicleToPark1;
-	static String vehicleToPark2;
-	static int numberOfSeats;
-	static String typeOfFuel;
-	static int numberOfEngines;
-	static int numberOfWheels;
-	static int numberOfDoors;
-	static Parking parking = Parking.PARKED;
 
 	public static void callMenu() {
 		System.out.println("CHOOSE ACTION BELOW: ");
@@ -69,88 +57,7 @@ public class Main {
 			// Park a vehicle
 			System.out.println("Which type of vehicle? Airplane, Boat, Bus, Car or Motorcycle?");
 			String vehicleToPark = scanner.next();
-			
-			switch(vehicleToPark) 
-			{
-				case "car":
-				System.out.println("Enter Car Registration Number!");
-				vehicleToPark1 = scanner.next();
-					switch(vehicleToPark1) 
-					{
-						default: 
-						System.out.println("Enter Car Color!");
-						String vehicleToPark2 = scanner.next();
-						
-						switch(vehicleToPark2) {
-							default:
-							System.out.println("Enter number of Seat's!");
-							int numberOfSeats = scanner.nextInt();
-							switch(numberOfSeats)
-							{
-								default:
-								System.out.println("Enter TypeOfFuel!");
-								String typeOfFuel = scanner.next();
-								switch(typeOfFuel)
-								{
-									default:
-									System.out.println("Enter Number of engine's!"); //OK
-									int numberOfEngines = scanner.nextInt();
-									VehicleParking parked = VehicleParking.GARAGE; //OK
-									switch(numberOfEngines) 
-									{
-										default:
-										System.out.println("Enter Number of Wheel's!");
-										int numberOfWheels = scanner.nextInt(); //OK
-										switch(numberOfWheels) 
-										{
-											default:
-											int numberOfDoors = 0;
-											System.out.println("Enter Retractable roof. Yes/No ?"); //OK
-											String retractableRoof = scanner.next();
-											if(retractableRoof == "Yes") 
-											{
-												retractableRoof = "Yes";
-												System.out.println("Enter Number of Door's!"); //OK
-												numberOfDoors = scanner.nextInt();
-											}
-											else if(retractableRoof == "No") 
-											{
-												retractableRoof = "No";
-												System.out.println("Enter Number of Door's!"); //OK
-												numberOfDoors = scanner.nextInt();
-											}
-											switch(numberOfDoors) 
-											{
-												default:
-												System.out.println("");
-												Parking parking = Parking.PARKED; //OK
-												
-											}
-											
-										}
-									}
-								}
-							}
-						}
-						
-							
-					}
-				case "boat":	
-				//System.out.println("Enter Car Registration Number!");
-				//vehicleToPark1 = scanner.next();
-				//registrationNumber, color, numberOfSeats, vehicleToPark, numberOfEngines, vehicleParking, hasToilet, hasSails, parked
-			break;
-			}
-			
-			try {
-				
-				Car car = new Car(vehicleToPark1, vehicleToPark2, numberOfSeats, typeOfFuel, numberOfEngines, parked, numberOfWheels, true, numberOfDoors, parking);
-				gh.createCar(car);
-			}
-			catch(Exception e) {
-				System.out.println("Car cannot be added!"); //OK
-			}
-			//gh.createVehicle(vehicleToPark.toLowerCase());
+			gh.createVehicle(vehicleToPark.toLowerCase());
 			
 			System.out.println("\n");
 			callMenu();
